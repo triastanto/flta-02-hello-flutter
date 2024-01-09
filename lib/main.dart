@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'recipe.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -14,11 +15,11 @@ class RecipeApp extends StatelessWidget {
     return MaterialApp(
       title: 'Recipe Calculator',
       theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.purple,
-            brightness: Brightness.light,
-          ),
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.purple,
+          brightness: Brightness.light,
+        ),
         textTheme: TextTheme(
           displayLarge: const TextStyle(
             fontSize: 72,
@@ -54,8 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SafeArea(
-        // TODO: Replace child: Container()
-        child: Container(),
+        child: ListView.builder(
+            itemCount: Recipe.samples.length,
+            itemBuilder: (BuildContext context, int index) {
+              // TODO: Update to return Recipe Card
+              return Text(Recipe.samples[index].label);
+            }),
       ),
     );
   }
