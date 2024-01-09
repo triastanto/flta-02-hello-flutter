@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'recipe.dart';
+import 'recipe_detail.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -64,8 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        // TODO: Replace return with return RecipeDetail()
-                        return const Text('Detail page');
+                        return RecipeDetail(recipe: Recipe.samples[index]);
                       },
                     ),
                   );
